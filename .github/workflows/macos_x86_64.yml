@@ -72,7 +72,7 @@ jobs:
           echo "当前pip版本: $(pip --version)"
           
           uv pip install --no-cache-dir -r requirements.txt
-          pyinstaller -F -n start_macos --paths=./sdk main.py
+          pyinstaller --onefile --console --collect-all=openpyxl --name="InsertImagesB" insert_images_b.py
           
           # 验证架构
           file dist/start_macos
